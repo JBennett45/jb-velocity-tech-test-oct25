@@ -25,7 +25,14 @@
   {{ content_for_header }}
 </head>
 <body>
-  {{ content_for_layout }}
+
+  {% sections 'header-group' %}
+  {{ content_for_layout }} ??
+  {% sections 'footer-group' %}
+
+  {%- if settings.enabled_cart_drawer == true -%}
+    Yes cart drawer enabled...
+  {%- endif -%}
   <script src="{{ 'jb-scripts.min.js' | asset_url }}" defer="defer"></script>
 </body>
 </html>

@@ -29,5 +29,16 @@
         "default": "montserrat_n7"
       }
     ]
+  },
+  {
+    "name": "Cart Settings",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enabled_cart_drawer",
+        "label": "Enable Cart Drawer?",
+        "default": true
+      }
+    ]
   }
 ]
