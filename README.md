@@ -6,4 +6,20 @@ After forking and pulling the repo down I've added a .shopifyignore file in prep
 
 ### NPM instruction
 
-Awaiting install
+Naviagte to the theme directory and run:
+
+```
+npm install
+```
+
+From here the node modules used to support the webpack file and task runners will be installed so from here run the following: 
+
+```
+npm run dev
+--
+npm run build
+```
+
+Dev is the watcher used for development, the watcher will be taking SCSS & JS files from the node-assets directory and outputing them in the theme assets folder. 
+
+Run the build command when the task is finished and ready to be compiled before pushing to the repo/store.

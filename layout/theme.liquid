@@ -6,15 +6,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="">
   <link rel="canonical" href="{{ canonical_url }}">
-
   <title>{{ shop.name }}</title>
-
   <meta name="description" content="">
-
+  {{ 'jb-styles.min.css' | asset_url | stylesheet_tag }}
   {{ content_for_header }}
 </head>
-
 <body>
   {{ content_for_layout }}
+  <script src="{{ 'jb-scripts.min.js' | asset_url }}" defer="defer"></script>
 </body>
 </html>
