@@ -6,5 +6,28 @@
     "theme_author": "THEME_AUTHOR",
     "theme_documentation_url": "https:\/\/THEME_DOCUMENTATION_URL.com\/",
     "theme_support_url": "https:\/\/THEME_SUPPORT_URL.com\/"
+  }, 
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "main_font",
+        "label": "Body Font",
+        "default": "montserrat_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "mid_font",
+        "label": "MidWeight Title Font",
+        "default": "montserrat_n5"
+      },
+           {
+        "type": "font_picker",
+        "id": "bold_font",
+        "label": "Bold Title Font",
+        "default": "montserrat_n7"
+      }
+    ]
   }
 ]

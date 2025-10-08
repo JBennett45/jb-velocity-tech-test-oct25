@@ -1,0 +1,17 @@
+body {
+  border:10px solid green;
+  font-family: var(--selectedMainFont);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: anialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 50px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--selectedBoldFont);
+  font-weight: var(--selectedBoldFontWeight);
+}
+.mst-semi-bold {
+  font-family: var(--selectedMidFont);
+  font-weight: var(--selectedMidFontWeight);
+}

@@ -7,7 +7,20 @@
   <meta name="theme-color" content="">
   <link rel="canonical" href="{{ canonical_url }}">
   <title>{{ shop.name }}</title>
-  <meta name="description" content="">
+  <meta name="description" content=""> 
+  <style>
+    {{ settings.main_font | font_face  }}
+    {{ settings.mid_font | font_face  }}
+    {{ settings.bold_font | font_face  }}
+    :root {
+      --selectedMainFont: {{ settings.main_font.family  }};
+      --selectedMainFontWeight: {{ settings.main_font.weight  }};
+      --selectedMidFont: {{ settings.mid_font.family  }};
+      --selectedMidFontWeight: {{ settings.mid_font.weight  }};
+      --selectedBoldFont: {{ settings.bold_font.family  }};
+      --selectedBoldFontWeight: {{ settings.bold_font.weight  }};
+    }
+  </style>
   {{ 'jb-styles.min.css' | asset_url | stylesheet_tag }}
   {{ content_for_header }}
 </head>
