@@ -1,5 +1,14 @@
-Header here...
-
+{% style %}
+  #velocity-hdr-cst {
+    background-color: {{ settings.main_site_bg }};
+    color: {{ settings.hdr_ftr_color }}
+  }
+{% endstyle %}
+<header id="velocity-hdr-cst">
+  <div class="container-cst">
+    Container
+  </div>
+</header>
 {% schema %}
 {
   "name": "Velocity Header",

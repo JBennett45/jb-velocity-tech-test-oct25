@@ -1,5 +1,14 @@
-Footer here...
-
+{% style %}
+  #velocity-ftr-cst {
+    background-color: {{ settings.main_site_bg }};
+    color: {{ settings.hdr_ftr_color }}
+  }
+{% endstyle %}
+<footer id="velocity-ftr-cst">
+  <div class="container-cst">
+    Footer container
+  </div>
+</footer>
 {% schema %}
 {
   "name": "Velocity Footer",

@@ -31,6 +31,23 @@
     ]
   },
   {
+    "name": "Colours",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_site_bg",
+        "label": "Main Theme Background Colour:",
+        "default": "#1E3563"
+      }, 
+      {
+        "type": "color",
+        "id": "hdr_ftr_color",
+        "label": "Header & Footer Font Colour:",
+        "default": "#FFFFFF"
+      }
+    ]
+  },
+  {
     "name": "Cart Settings",
     "settings": [
       {

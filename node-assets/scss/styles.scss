@@ -1,3 +1,8 @@
 // global //
 @use "./global/normalize";
 @use "./global/main";
+@use "./global/typography";
+
+// partials //
+@use "./partials/header";
+@use "./partials/footer";

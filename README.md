@@ -23,3 +23,9 @@ npm run build
 Dev is the watcher used for development, the watcher will be taking SCSS & JS files from the node-assets directory and outputing them in the theme assets folder. 
 
 Run the build command when the task is finished and ready to be compiled before pushing to the repo/store.
+
+#### Naming Conventions
+All my css declarations tend to end with `-cst` to make sure the id/class is unique and won't ever clash with an app if one is added and use generic class names such as 'cart' etc. 
+
+#### Theme Settings 
+I've created theme settings for the font selection, background and font colours and various cart options, these can be found in the customiser > theme settings.
