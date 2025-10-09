@@ -29,3 +29,9 @@ All my css declarations tend to end with `-cst` to make sure the id/class is uni
 
 #### Theme Settings 
 I've created theme settings for the font selection, background and font colours and various cart options, these can be found in the customiser > theme settings.
+
+#### Product Tags
+The New & Get X for Y tags are managed in the backend by boolean metafields so on a different store the metafields would need copying over or renaming in the product collection snippet. 
+
+#### Design Changes
+We didn't discuss how you want the add to cart functionality to work on the collections page and without there being a button but quanitity control I found it abit odd, if the + automatically added to the basket then you wouldn't be able to increment more than one so I've added a "add to cart" button that appears when the increment buttons are used. 

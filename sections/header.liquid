@@ -10,11 +10,18 @@
 {% endstyle %}
 {% assign userIcon = 'user-icon.png' | asset_url %}
 {% assign basketIcon = 'basket-icon.png' | asset_url %}
+{% if cart.item_count > 0 %}
+  {% assign basketCountStatus = null %}
+{% else %}
+  {% assign basketCountStatus = 'inactive-bk-cst' %}
+{% endif %}
 <header id="velocity-hdr-cst">
   <div class="container-cst">
     <div class="logo-wrap-cst">
       {% if section.settings.main_theme_logo %}
-        <img src="{{ section.settings.main_theme_logo  | img_url: 'master' }}" alt="{{ section.settings.main_theme_logo.alt }}" />
+        <a href="{{ routes.root_url }}">
+          <img src="{{ section.settings.main_theme_logo  | img_url: 'master' }}" alt="{{ section.settings.main_theme_logo.alt }}" />
+        </a>
       {% endif %}
     </div>
     <div class="icon-wrap-cst">
@@ -25,12 +32,8 @@
       {% endif %}
       <a href="{{ routes.cart_url }}" class="icon-entry-cst">
         <img src="{{ basketIcon }}" alt="Account Area">
-        <div class="basket-counter-cst">
-          {% if cart.item_count > 0 %}
-            {{ cart.item_count }}
-          {% endif %}
-
-           {{ cart.item_count }}
+        <div class="basket-counter-cst {{ basketCountStatus }}">
+          <span>{{ cart.item_count }}</span>
         </div>
       </a>
     </div>

@@ -1,0 +1,30 @@
+// basic pagination support for theme option of paginating collections //
+#pagination-cst {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:1px oslid red;
+  padding: 75px 0 50px 0;
+  span {
+    height:30px;
+    width:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:2px solid #68DD7C;;
+    border-radius: 15px;
+    font-family: var(--selectedBoldFont);
+    font-weight: var(--selectedBoldFontWeight);
+    margin: 0 4px;
+    color: black;
+    // background-color: #68DD7C;
+  }
+  .current {
+    background-color: #68DD7C;
+  }
+  a {
+    text-decoration: none;
+    text-transform: none;
+    color: inherit;
+  }
+}

@@ -1,0 +1,67 @@
+{% assign selectedVariant = product.first_or_selected_variant %}
+{% assign likeIcon = 'like-icon.png' | asset_url %}
+{% assign trophyIcon = 'trophy-icon.png' | asset_url %}
+{% assign tagIcon = 'tag-icon.png' | asset_url %}
+ <div class="collection-product-entry-cst" data-prodid="{{ product.id }}">
+  <div class="inner-wrap-cst">
+    <div class="prod-tags-wrap-cst">
+      <div class="tags-inner-cst">
+        {% if product.metafields.custom.new_item.value %}
+          <div class="tag-entry-cst tag-newstt-cst">
+            <div class="icon-wrap-cst">
+              <img src="{{ trophyIcon }}" alt="Like this item?">
+            </div>
+            <span>New</span>
+          </div>
+        {% endif %}
+         {% if product.metafields.custom.special_deal %}
+          <div class="tag-entry-cst tag-promo-cst">
+            <div class="icon-wrap-cst">
+              <img src="{{ tagIcon }}" alt="Get a deal on this item">
+            </div>
+            <span>Get X for Y</span>
+          </div>
+        {% endif %}
+      </div>
+      <div class="like-usr-cst">
+        <a id="like-toggle-cst">
+          <img src="{{ likeIcon }}" alt="Like this item?">
+        </a>
+      </div>
+    </div>
+    {% if product.featured_image %}
+      <div class="prod-featimg-cst">
+        <img src="{{ product.featured_image | img_url: 'medium'  }}" />
+      </div>
+    {% endif %} 
+    <div class="product-title-variant-cst">
+      <h4>{{ product.title | escape | link_to: product.url }}</h4>
+      {{ selectedVariant }}
+      <select class="product-variant-select-cst">
+        {% for variant in product.variants %}
+          <option
+            {% if selectedVariant.id == variant.id %}
+              selected
+            {% endif %}
+            value="{{ variant.id }}"
+          >
+            {{ variant.title }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="product-cst-quant-wrap-cst">
+      <div class="quant-btns-wrap-cst">
+        <button type="button" class="prod-qunatity-update" data-quantype="minus"> - </button>
+        <input name="requested-quantity" type="text" value="0">
+        <button type="button" class="prod-qunatity-update" data-quantype="plus"> + </button>
+      </div>
+      <div class="price-wrap-cst">
+        <p>{{ product.price | money }}</p>
+      </div>
+    </div>
+    <div class="addtocart-btn-cst">
+      Add to cart
+    </div>
+  </div>
+</div>

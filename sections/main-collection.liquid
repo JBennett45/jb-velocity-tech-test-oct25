@@ -1,0 +1,45 @@
+{% paginate collection.products by section.settings.paginate_results_by %}
+{% if section.settings.custom_collection_title %}
+  {% assign collectionTitle = section.settings.custom_collection_title %}
+{% else %}
+   {% assign collectionTitle = collection.title%}
+{% endif %}
+<div id="collection-title-cst">
+  <div class="container-cst">
+    <h1 class="mst-semi-bold">{{ collectionTitle }}</h1> 
+  </div>
+</div>
+<div id="collection-product-listing-cst">
+  <div class="container-cst">
+    {% for product in collection.products %}
+      {% render 'product-collections-output' with product as product %}
+    {% endfor %}
+  </div>
+</div>
+<div id="pagination-cst">
+  {{ paginate | default_pagination: next: '&rarr;', previous: '&larr;' }}
+</div>
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "General Collection Layout",
+  "settings": [
+    {
+      "type": "range",
+      "id": "paginate_results_by",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "label": "Paginate Results By:",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "custom_collection_title",
+      "label": "Collection Title:",
+      "default": "This is a page title"
+    }
+  ]
+}
+{% endschema %}

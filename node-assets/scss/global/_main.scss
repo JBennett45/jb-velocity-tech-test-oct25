@@ -1,5 +1,4 @@
 body {
-  border:10px solid green;
   font-family: var(--selectedMainFont);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: anialiased;
@@ -7,13 +6,18 @@ body {
   // consider sticky header //
   padding-top: 60px;
 }
+// prevent overflow of main content and add a min-height so the none populated/built sections show space between header & footer //
+#master-wrap-veloshop-cst {
+  overflow-x: hidden;
+  min-height: calc(50vh - 60px);
+}
 .container-cst {
   max-width:1320px;
   width:100%;
   margin:0 auto;
   @media only screen and (max-width: 1340px) {
     padding-left: 20px;
-    padding-right: 20px;;
+    padding-right: 20px;
   }
 }
 
