@@ -4,6 +4,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: anialiased;
   -moz-osx-font-smoothing: grayscale;
+  // consider sticky header //
+  padding-top: 60px;
 }
 .container-cst {
   max-width:1320px;

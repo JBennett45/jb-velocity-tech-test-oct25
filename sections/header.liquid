@@ -3,10 +3,37 @@
     background-color: {{ settings.main_site_bg }};
     color: {{ settings.hdr_ftr_color }}
   }
+  #velocity-hdr-cst .logo-wrap-cst {
+    max-width: {{ section.settings.logo_width }}px;
+    height: {{ section.settings.logo_height }}px;
+  }
 {% endstyle %}
+{% assign userIcon = 'user-icon.png' | asset_url %}
+{% assign basketIcon = 'basket-icon.png' | asset_url %}
 <header id="velocity-hdr-cst">
   <div class="container-cst">
-    Container
+    <div class="logo-wrap-cst">
+      {% if section.settings.main_theme_logo %}
+        <img src="{{ section.settings.main_theme_logo  | img_url: 'master' }}" alt="{{ section.settings.main_theme_logo.alt }}" />
+      {% endif %}
+    </div>
+    <div class="icon-wrap-cst">
+      {% if shop.customer_accounts_enabled %}
+        <a href="{{ routes.account_login_url }}" class="icon-entry-cst">
+          <img src="{{ userIcon }}" alt="Account Area">
+        </a>
+      {% endif %}
+      <a href="{{ routes.cart_url }}" class="icon-entry-cst">
+        <img src="{{ basketIcon }}" alt="Account Area">
+        <div class="basket-counter-cst">
+          {% if cart.item_count > 0 %}
+            {{ cart.item_count }}
+          {% endif %}
+
+           {{ cart.item_count }}
+        </div>
+      </a>
+    </div>
   </div>
 </header>
 {% schema %}
@@ -15,24 +42,29 @@
   "class": "sitewide-header",
   "settings": [
     {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 36,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 20
+      "type": "image_picker",
+      "id": "main_theme_logo",
+      "label": "Logo"
     },
     {
       "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 36,
-      "step": 4,
+      "id": "logo_width",
+      "min": 100,
+      "max": 150,
+      "step": 1,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 20
+      "label": "Logo Width",
+      "default": 133
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Logo Height",
+      "default": 36
     }
   ]
 }
