@@ -18,9 +18,9 @@
 <header id="velocity-hdr-cst">
   <div class="container-cst">
     <div class="logo-wrap-cst">
-      {% if section.settings.main_theme_logo %}
+      {% if settings.main_theme_logo %}
         <a href="{{ routes.root_url }}">
-          <img src="{{ section.settings.main_theme_logo  | img_url: 'master' }}" alt="{{ section.settings.main_theme_logo.alt }}" />
+          <img src="{{ settings.main_theme_logo  | img_url: 'master' }}" alt="{{ settings.main_theme_logo.alt }}" />
         </a>
       {% endif %}
     </div>

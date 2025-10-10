@@ -419,7 +419,65 @@ a {
 }
 
 #velocity-ftr-cst {
-  padding: 50px 0;
+  padding: 30px 0;
+}
+#velocity-ftr-cst .container-cst {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#velocity-ftr-cst .container-cst .ftt-logo-wrap-cst {
+  max-width: 400px;
+  width: 100%;
+}
+#velocity-ftr-cst .container-cst .ftt-logo-wrap-cst .logo-wrap-cst {
+  margin-bottom: 10px;
+}
+#velocity-ftr-cst .container-cst .ftt-logo-wrap-cst .logo-wrap-cst img {
+  width: 100%;
+}
+#velocity-ftr-cst .container-cst .ftt-logo-wrap-cst p {
+  font-size: 10px;
+  line-height: 150%;
+}
+@media only screen and (max-width: 768px) {
+  #velocity-ftr-cst .container-cst .ftt-logo-wrap-cst p {
+    max-width: 400px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #velocity-ftr-cst .container-cst .ftt-logo-wrap-cst {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+#velocity-ftr-cst .container-cst .ftt-menus-wrap-cst {
+  max-width: 345px;
+  width: 100%;
+  display: flex;
+}
+#velocity-ftr-cst .container-cst .ftt-menus-wrap-cst .menu-cst {
+  width: 50%;
+}
+#velocity-ftr-cst .container-cst .ftt-menus-wrap-cst .menu-cst a {
+  display: block;
+  font-family: var(--selectedBoldFont);
+  font-weight: var(--selectedBoldFontWeight);
+  font-size: 12px;
+  line-height: 150%;
+  text-decoration: underline;
+}
+@media only screen and (max-width: 768px) {
+  #velocity-ftr-cst .container-cst .ftt-menus-wrap-cst {
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #velocity-ftr-cst .container-cst {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
 #collection-title-cst {
@@ -438,13 +496,11 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   gap: 20px;
+  justify-items: center;
 }
 #collection-product-listing-cst .container-cst .collection-product-entry-cst {
   padding: 20px;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  align-self: flex-start;
   width: -moz-fit-content;
   width: fit-content;
   box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.1);

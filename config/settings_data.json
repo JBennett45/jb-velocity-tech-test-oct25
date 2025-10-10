@@ -8,7 +8,10 @@
  * ------------------------------------------------------------
  */
 {
-  "current": "Default",
+  "current": {
+    "main_theme_logo": "shopify://shop_images/vel-logo.png",
+    "content_for_index": []
+  },
   "presets": {
     "Default": {}
   }

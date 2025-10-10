@@ -10,20 +10,28 @@
 {% endstyle %}
 <footer id="velocity-ftr-cst">
   <div class="container-cst">
-
-    <div class="logo-wrap-cst">
-      {% if settings.main_theme_logo %}
-        <a href="{{ routes.root_url }}">
-          <img src="{{ settings.main_theme_logo  | img_url: 'master' }}" alt="{{ settings.main_theme_logo.alt }}" />
-        </a>
-      {% endif %}
+    <div class="ftt-logo-wrap-cst">
+      <div class="logo-wrap-cst">
+        {% if settings.main_theme_logo %}
+          <a href="{{ routes.root_url }}">
+            <img src="{{ settings.main_theme_logo  | img_url: 'master' }}" alt="{{ settings.main_theme_logo.alt }}" />
+          </a>
+        {% endif %}
+      </div>
+      {{ section.settings.ft_disclaimer }}
     </div>
-    {% for link in section.settings.ft_menu_one -%}
-      {{ link.title | link_to: link.url }}
-    {%- endfor %}
-    {% for link in section.settings.ft_menu_two -%}
-      {{ link.title | link_to: link.url }}
-    {%- endfor %}
+    <div class="ftt-menus-wrap-cst">
+      <div class="menu-cst">
+        {% for link in section.settings.ft_menu_one.links -%}
+          {{ link.title | link_to: link.url }}
+        {%- endfor %}
+      </div>
+      <div class="menu-cst">
+        {% for link in section.settings.ft_menu_two.links -%}
+          {{ link.title | link_to: link.url }}
+        {%- endfor %}
+      </div>
+    </div>
   </div>
 </footer>
 {% schema %}
@@ -39,12 +47,12 @@
     {
       "type": "link_list",
       "id": "ft_menu_one",
-      "label": "Footer Menu One"
+      "label": "Footer Menu One:"
     },
     {
       "type": "link_list",
       "id": "ft_menu_two",
-      "label": "Footer Menu One"
+      "label": "Footer Menu Two:"
     }
   ]
 }

@@ -1,3 +1,53 @@
   #velocity-ftr-cst {
-    padding:50px 0;
+    padding:30px 0;
+    .container-cst {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .ftt-logo-wrap-cst {
+        max-width:400px;
+        width:100%;
+        .logo-wrap-cst {
+          margin-bottom: 10px;
+          img {
+            width:100%; 
+          }
+        }
+        p {
+          font-size:10px;
+          line-height: 150%;
+          @media only screen and (max-width: 768px) {
+            max-width:400px;
+          }
+        }
+        @media only screen and (max-width: 768px) {
+          max-width:100%;
+          margin-bottom: 20px;;
+        }
+      }
+      .ftt-menus-wrap-cst {
+        max-width:345px;
+        width:100%;
+        display: flex;
+        .menu-cst {
+          width:50%;
+          a {
+            display: block;
+            font-family: var(--selectedBoldFont);
+            font-weight: var(--selectedBoldFontWeight);
+            font-size:12px; 
+            line-height: 150%;
+            text-decoration: underline;
+          }
+        }
+        @media only screen and (max-width: 768px) {
+          max-width:100%;
+        }
+      }
+      @media only screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
   }
