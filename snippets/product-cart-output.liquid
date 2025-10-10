@@ -1,0 +1,27 @@
+{% assign plusIcon = 'plus.png' | asset_url %}
+{% assign minIcon = 'minus.png' | asset_url %}
+<div class="cart-product-entry-cst" data-product-key="{{ item.key }}">
+  <div class="top-product-deets-cst">
+    <div class="prod-img-cst">
+      <img src="{{ product.image | img_url: 'medium'  }}" />
+    </div>
+    <div class="prod-title-cst">
+      <h4>{{ product.title }}</h4>
+      <h5>{{ product.variant.title }}</h5>
+    </div>
+  </div>
+  <div class="btm-product-deets-cst">
+    <div class="price-wrap-cst">
+      <p>{{ product.price | money }}</p>
+    </div>
+    <div class="quant-btns-wrap-cst">
+      <button type="button" class="prod-qunatity-update" data-quantype="minus">
+        <img src="{{ minIcon }}" alt="Minus Quantity" />
+      </button>
+      <input name="requested-quantity" type="text" value="0">
+      <button type="button" class="prod-qunatity-update" data-quantype="plus">
+        <img src="{{ plusIcon }}" alt="Plus Quantity" />
+      </button>
+    </div>
+  </div>
+</div>

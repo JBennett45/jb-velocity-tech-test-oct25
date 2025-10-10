@@ -30,7 +30,7 @@
           <img src="{{ userIcon }}" alt="Account Area">
         </a>
       {% endif %}
-      <a href="{{ routes.cart_url }}" class="icon-entry-cst">
+      <a href="{{ routes.cart_url }}" id="cart-drawer-init-cst" class="icon-entry-cst">
         <img src="{{ basketIcon }}" alt="Account Area">
         <div class="basket-counter-cst {{ basketCountStatus }}">
           <span>{{ cart.item_count }}</span>

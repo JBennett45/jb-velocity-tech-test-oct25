@@ -2,6 +2,8 @@
 {% assign likeIcon = 'like-icon.png' | asset_url %}
 {% assign trophyIcon = 'trophy-icon.png' | asset_url %}
 {% assign tagIcon = 'tag-icon.png' | asset_url %}
+{% assign plusIcon = 'plus.png' | asset_url %}
+{% assign minIcon = 'minus.png' | asset_url %}
  <div class="collection-product-entry-cst" data-prodid="{{ product.id }}">
   <div class="inner-wrap-cst">
     <div class="prod-tags-wrap-cst">
@@ -52,16 +54,20 @@
     </div>
     <div class="product-cst-quant-wrap-cst">
       <div class="quant-btns-wrap-cst">
-        <button type="button" class="prod-qunatity-update" data-quantype="minus"> - </button>
+        <button type="button" class="prod-qunatity-update" data-quantype="minus">
+          <img src="{{ minIcon }}" alt="Minus Quantity" />
+        </button>
         <input name="requested-quantity" type="text" value="0">
-        <button type="button" class="prod-qunatity-update" data-quantype="plus"> + </button>
+        <button type="button" class="prod-qunatity-update" data-quantype="plus">
+          <img src="{{ plusIcon }}" alt="Plus Quantity" />
+        </button>
       </div>
       <div class="price-wrap-cst">
         <p>{{ product.price | money }}</p>
       </div>
     </div>
     <div class="addtocart-btn-cst">
-      Add to cart
+      <span>Add to cart</span>
     </div>
   </div>
 </div>

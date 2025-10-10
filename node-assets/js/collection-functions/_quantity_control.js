@@ -21,7 +21,7 @@ document.querySelectorAll('.product-cst-quant-wrap-cst .quant-btns-wrap-cst .pro
     // check for Add to cart instance and show based on input //
     if(addToCart) {
        if(currentInput.value > 0) {
-        addToCart.style.display = "block";
+        addToCart.style.display = "flex";
       } else {
         addToCart.style.display = "none";
       }

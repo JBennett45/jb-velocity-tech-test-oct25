@@ -31,7 +31,19 @@
   </main>
   {% sections 'footer-group' %}
   {%- if settings.enabled_cart_drawer == true -%}
-    Yes cart drawer enabled...
+    {% assign crossIcon = 'cross.png' | asset_url %}
+    <div id="drawer-master-wrap-cst">
+      <div class="drawer-inner-wrap-cst">
+        <div class="cart-title-wrap-cst">
+          <h3 class="mst-semi-bold">Your Basket</h3>
+          <a id="clear-all-cart-cst">Clear all</a>
+        </div>
+        <div id="drawer-dynamic-wrap-cst"></div>
+        <div id="close-drawer-instance-cst">
+           <img src="{{ crossIcon }}" alt="Close Drawer">
+        </div>
+      </div>
+    </div>
   {%- endif -%}
   <script src="{{ 'jb-scripts.min.js' | asset_url }}" defer="defer"></script>
 </body>

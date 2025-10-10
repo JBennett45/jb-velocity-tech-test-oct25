@@ -2,10 +2,12 @@
 @use "./global/normalize";
 @use "./global/main";
 @use "./global/typography";
-
-// partials //
+// header/footer //
 @use "./partials/header";
 @use "./partials/footer";
-// partials //
-@use "./partials/collections/listings";
+// collections //
+@use "./partials/collections/listing_wrapper";
 @use "./partials/collections/pagination";
+
+// conponents //
+@use "./components/cart/drawer";

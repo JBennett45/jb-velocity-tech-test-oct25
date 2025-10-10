@@ -1,0 +1,23 @@
+// pull in card //
+@use "../collections/product_card";
+// title //
+#collection-title-cst {
+  padding: 30px 0;
+  .container-cst {
+    text-align: center;
+    h1 {
+      font-size:30px;
+      line-height:150%;
+      letter-spacing: -0.2px;
+    }
+  }
+}
+// collection wrapper //
+#collection-product-listing-cst {
+  .container-cst {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap:20px;
+    justify-items: center;
+  }
+}
