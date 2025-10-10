@@ -11,7 +11,10 @@
   "sections": {
     "main": {
       "type": "main-collection",
-      "settings": {}
+      "settings": {
+        "paginate_results_by": 4,
+        "custom_collection_title": "This is a page title"
+      }
     }
   },
   "order": [

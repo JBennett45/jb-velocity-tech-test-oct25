@@ -4,8 +4,8 @@
     color: {{ settings.hdr_ftr_color }}
   }
   #velocity-hdr-cst .logo-wrap-cst {
-    max-width: {{ section.settings.logo_width }}px;
-    height: {{ section.settings.logo_height }}px;
+    max-width: {{ settings.logo_width }}px;
+    height: {{ settings.logo_height }}px;
   }
 {% endstyle %}
 {% assign userIcon = 'user-icon.png' | asset_url %}
@@ -44,31 +44,6 @@
   "name": "Velocity Header",
   "class": "sitewide-header",
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "main_theme_logo",
-      "label": "Logo"
-    },
-    {
-      "type": "range",
-      "id": "logo_width",
-      "min": 100,
-      "max": 150,
-      "step": 1,
-      "unit": "px",
-      "label": "Logo Width",
-      "default": 133
-    },
-    {
-      "type": "range",
-      "id": "logo_height",
-      "min": 10,
-      "max": 50,
-      "step": 1,
-      "unit": "px",
-      "label": "Logo Height",
-      "default": 36
-    }
   ]
 }
 {% endschema %}

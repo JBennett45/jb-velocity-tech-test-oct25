@@ -8,6 +8,36 @@
     "theme_support_url": "https:\/\/THEME_SUPPORT_URL.com\/"
   }, 
   {
+    "name": "General",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "main_theme_logo",
+        "label": "Logo"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 100,
+        "max": 150,
+        "step": 1,
+        "unit": "px",
+        "label": "Logo Width",
+        "default": 133
+      },
+      {
+        "type": "range",
+        "id": "logo_height",
+        "min": 10,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Logo Height",
+        "default": 36
+      }
+    ]
+  },
+  {
     "name": "Typography",
     "settings": [
       {

@@ -3,10 +3,27 @@
     background-color: {{ settings.main_site_bg }};
     color: {{ settings.hdr_ftr_color }}
   }
+  #velocity-ftr-cst .logo-wrap-cst {
+    max-width: {{ settings.logo_width }}px;
+    height: {{ settings.logo_height }}px;
+  }
 {% endstyle %}
 <footer id="velocity-ftr-cst">
   <div class="container-cst">
-    Footer container
+
+    <div class="logo-wrap-cst">
+      {% if settings.main_theme_logo %}
+        <a href="{{ routes.root_url }}">
+          <img src="{{ settings.main_theme_logo  | img_url: 'master' }}" alt="{{ settings.main_theme_logo.alt }}" />
+        </a>
+      {% endif %}
+    </div>
+    {% for link in section.settings.ft_menu_one -%}
+      {{ link.title | link_to: link.url }}
+    {%- endfor %}
+    {% for link in section.settings.ft_menu_two -%}
+      {{ link.title | link_to: link.url }}
+    {%- endfor %}
   </div>
 </footer>
 {% schema %}
@@ -15,24 +32,19 @@
   "class": "sitewide-footer",
   "settings": [
     {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 36,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 20
+      "type": "richtext",
+      "id": "ft_disclaimer",
+      "label": "Footer Textarea:"
     },
     {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 36,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 20
+      "type": "link_list",
+      "id": "ft_menu_one",
+      "label": "Footer Menu One"
+    },
+    {
+      "type": "link_list",
+      "id": "ft_menu_two",
+      "label": "Footer Menu One"
     }
   ]
 }
