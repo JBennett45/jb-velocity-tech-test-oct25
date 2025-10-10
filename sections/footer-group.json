@@ -14,7 +14,7 @@
     "footer": {
       "type": "footer",
       "settings": {
-        "ft_disclaimer": "",
+        "ft_disclaimer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.</p>",
         "ft_menu_one": "customer-care",
         "ft_menu_two": "footer"
       }
