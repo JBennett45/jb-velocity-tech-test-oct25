@@ -14,6 +14,9 @@
   flex-direction: column;
   padding: 0;
   transition: all 0.3s ease;
+  overflow: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
   .drawer-inner-wrap-cst {
     max-width:320px;
     width:100%;
@@ -48,9 +51,9 @@
     }
     // products wrap //
     #drawer-products-main-wrap-cst {
-      max-height: 600px;
       overflow: auto;
       position: relative;
+      max-height: 600px;
       min-height: 599px;
     }
     .drawer-footer-cst {

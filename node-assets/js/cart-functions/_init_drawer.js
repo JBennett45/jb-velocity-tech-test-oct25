@@ -11,11 +11,13 @@ if(drwElement) {
   // open drawer //
   openDrw.addEventListener('click', (e) => {
     e.preventDefault();
-    drwElement.classList.add('drawer-cst-active')
+    document.body.style.overflow = "hidden";
+    drwElement.classList.add('drawer-cst-active');
   });
   // close drawer //
   closeDrw.addEventListener('click', (e) => {
     e.preventDefault();
+    document.body.style.overflow = "auto";
     drwElement.classList.remove('drawer-cst-active')
   });
   // clear drawer //
