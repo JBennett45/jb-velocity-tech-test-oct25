@@ -1,4 +1,5 @@
 import { buildCartDrawer } from "../cart-functions/_update_drawer";
+import { updateCartCount } from "../cart-functions/_cart_count";
 import { activateLoadingState, endLoadingState } from "../general-functions/_control_loading_states";
 document.querySelectorAll('.collection-product-entry-cst .addtocart-btn-cst').forEach((addToCart) => {
   addToCart.addEventListener('click', async (e) => {
@@ -26,6 +27,7 @@ document.querySelectorAll('.collection-product-entry-cst .addtocart-btn-cst').fo
       },
       body: JSON.stringify(cartData)
     });
+    updateCartCount();
     buildCartDrawer();
     if(drwElement) {
       drwElement.classList.add('drawer-cst-active');
