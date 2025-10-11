@@ -25,7 +25,7 @@ Dev is the watcher used for development, the watcher will be taking SCSS & JS fi
 Run the build command when the task is finished and ready to be compiled before pushing to the repo/store.
 
 #### Test Store
-Link to my test store preview [test store preview](https://test-store-1882.myshopify.com/collections/featured-products/).
+Link to my test store preview [test store preview](https://8w9oicvkwkgd7rwm-14901742.shopifypreview.com/collections/featured-products).
 
 #### Naming Conventions
 All my css declarations tend to end with `-cst` to make sure the id/class is unique and won't ever clash with an app if one is added and use generic class names such as 'cart' etc. 
