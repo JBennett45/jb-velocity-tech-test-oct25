@@ -1,7 +1,6 @@
 import { updateCartCount } from "../cart-functions/_cart_count";
 import { activateLoadingState, endLoadingState } from "../general-functions/_control_loading_states";
-
-
+// Build instance //
 export const buildCartDrawer = async () => {
   const drwElement = document.getElementById('drawer-master-wrap-cst');
   const targetElement = document.getElementById('drawer-dynamic-wrap-cst');
@@ -11,9 +10,10 @@ export const buildCartDrawer = async () => {
     targetElement.innerHTML = sectionRes;
     // cart interactions //
     drawerQuantityControl();
+    drawerRemoveItemComplete();
   }
 }
-
+// Quantity //
 const drawerQuantityControl = () => {
   document.querySelectorAll('.cart-product-entry-cst .prod-qunatity-update').forEach((productupdate) => {
     productupdate.addEventListener('click', async (e) => {
@@ -40,31 +40,48 @@ const drawerQuantityControl = () => {
           updatedValue = currentValue + 1;
           currentInput.value = updatedValue;
         }
-
-        const updateRes = await fetch("/cart/update.js", {
-          method: "post",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ updates: { [productKey]: updatedValue } }),
-        });
-        const newCart = await updateRes.json();
-        await updateCartCount();
-        // remove this item if needed //
-        if(updatedValue == 0) {
-           productWrap.remove();
-        }
-        // check cart state //
-        if(newCart.item_count == 0) {
-          const drwElement = document.getElementById('drawer-master-wrap-cst');
-          drwElement.classList.remove('drawer-cst-active')
-          buildCartDrawer();
-        }
-        else {
-          await endLoadingState(productWrap); 
-        }
+        // send update //
+        drawerUpdateCall(productWrap, productKey, updatedValue);
     });
   });
 }
-
+// Remove entire product //
+const drawerRemoveItemComplete = () => {
+  document.querySelectorAll('.cart-product-entry-cst .cart-remove-completely-cst').forEach((productRemove) => {
+    productRemove.addEventListener('click', async (e) => {
+      let productWrap = productRemove.closest('.cart-product-entry-cst');
+      let productKey = productWrap.getAttribute('data-product-key');
+      let endValue = 0; 
+      // Loader //
+      activateLoadingState(productWrap); 
+      // send update //
+      drawerUpdateCall(productWrap, productKey, endValue);
+    });
+  });
+}
+// cart updates based on values //
+const drawerUpdateCall = async(item, key, quantity) => {
+  const updateRes = await fetch("/cart/update.js", {
+    method: "post",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ updates: { [key]: quantity } }),
+  });
+  const newCart = await updateRes.json();
+  await updateCartCount();
+  // remove this item if needed //
+  if(quantity == 0) {
+    item.remove();
+  }
+  // check cart state //
+  if(newCart.item_count == 0) {
+    const drwElement = document.getElementById('drawer-master-wrap-cst');
+    drwElement.classList.remove('drawer-cst-active')
+    buildCartDrawer();
+  }
+  else {
+    await endLoadingState(item); 
+  }
+};

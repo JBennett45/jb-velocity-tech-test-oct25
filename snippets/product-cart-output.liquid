@@ -1,5 +1,6 @@
 {% assign plusIcon = 'plus.png' | asset_url %}
 {% assign minIcon = 'minus.png' | asset_url %}
+{% assign trashIcon = 'trash-icon.png' | asset_url %}
 <div class="cart-product-entry-cst" data-product-key="{{ product.key }}">
   <div class="top-product-deets-cst">
     <div class="prod-img-cst">
@@ -9,6 +10,9 @@
       <h4>{{ product.title }}</h4>
       <h5>{{ product.variant.title }}</h5>
     </div>
+    <a class="cart-remove-completely-cst">
+      <img src="{{ trashIcon }}" alt="Remove this item" />
+    </a>
   </div>
   <div class="btm-product-deets-cst">
     <div class="price-wrap-cst">
