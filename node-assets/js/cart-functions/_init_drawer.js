@@ -1,9 +1,9 @@
-import { updateDrawerItems } from "../cart-functions/_update_drawer";
+import { buildCartDrawer } from "../cart-functions/_update_drawer";
 import { updateCartCount } from "../cart-functions/_cart_count";
 const drwElement = document.getElementById('drawer-master-wrap-cst');
 if(drwElement) {
   // populate drawer on init //
-  updateDrawerItems();
+  buildCartDrawer();
   // vars //
   const openDrw = document.getElementById('cart-drawer-init-cst');
   const closeDrw = document.getElementById('close-drawer-instance-cst');
@@ -29,7 +29,7 @@ if(drwElement) {
       }
     });
     drwElement.classList.remove('drawer-cst-active');
-    updateDrawerItems();
+    buildCartDrawer();
     updateCartCount();
   });
 }

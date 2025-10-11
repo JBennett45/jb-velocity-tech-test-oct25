@@ -15,12 +15,22 @@
           <span>{{ cart.total_discounts | money }}</span>
         </div>
       {% endif %}
-      <div class="cart-drawer-footer-row">
-        <h3>Subtotal</h3>
-         <span>{{ cart.item_count }}</span>
-        <span>{{ cart.total_price | money }}</span>
+      <div class="drawer-footer-cst">
+        <div class="top-row-cst">
+          <div class="cart-itemwrap-cst">
+            <span class="cart-itemcount-cst">{{ cart.item_count }}</span>
+            <span class="cart-itemlabel-cst">items</span>
+          </div>
+          <h4 class="mst-semi-bold">{{ cart.total_price | money }}</h4>
+        </div>
+        <div class="btn-row-cst">
+          <a href="{{ routes.account_login_url }}" class="points-btn-cst">
+            Earn 20 points with this order
+          </a>
+          <button type="submit" name="checkout" class="drawer-submit-btn-cst">
+            <span class="mst-semi-bold">Checkout</span>
+          </button>
       </div>
-      <button type="submit" name="checkout" class="cart-drawer-button">Checkout</button>
     </footer>
   {% endif %}
 {% endform %}

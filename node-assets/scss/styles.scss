@@ -10,4 +10,5 @@
 @use "./partials/collections/pagination";
 
 // conponents //
+@use "./components/general/loading_state";
 @use "./components/cart/drawer";
