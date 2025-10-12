@@ -30,6 +30,7 @@ if(drwElement) {
         'Content-Type': 'application/json'
       }
     });
+    document.body.style.overflow = "auto";
     drwElement.classList.remove('drawer-cst-active');
     buildCartDrawer();
     updateCartCount();

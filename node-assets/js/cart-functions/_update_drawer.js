@@ -78,7 +78,8 @@ const drawerUpdateCall = async(item, key, quantity) => {
   // check cart state //
   if(newCart.item_count == 0) {
     const drwElement = document.getElementById('drawer-master-wrap-cst');
-    drwElement.classList.remove('drawer-cst-active')
+    document.body.style.overflow = "auto";
+    drwElement.classList.remove('drawer-cst-active');
     buildCartDrawer();
   }
   else {
